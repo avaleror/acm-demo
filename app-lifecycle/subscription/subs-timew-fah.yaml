@@ -1,0 +1,23 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: fahclient-subscription
+  namespace: fahclient
+  labels:
+    app: fahclient-centos8
+  annotations:
+    apps.open-cluster-management.io/github-path: app-lifecycle/fahclient
+    apps.open-cluster-management.io/github-branch: test
+spec:
+  channel: fahclient/fahclient-centos8
+  placement:
+    placementRef:
+      name: fah-placement
+      kind: PlacementRule
+  timewindow:
+    windowtype: "active" #Enter active or blocked depending on the purpose of the type.
+    location: "America/Los_Angeles"
+    daysofweek: ["Monday", "Wednesday", "Friday"]
+    hours:
+      - start: "12:40PM"
+        end: "1:40PM"
