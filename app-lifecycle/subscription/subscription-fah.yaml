@@ -7,7 +7,7 @@ metadata:
     app: fahclient-centos8
   annotations:
     apps.open-cluster-management.io/github-path: app-lifecycle/fahclient
-    apps.open-cluster-management.io/github-branch: master
+    apps.open-cluster-management.io/github-branch: test
 spec:
   channel: fahclient/fahclient-centos8
   placement:
